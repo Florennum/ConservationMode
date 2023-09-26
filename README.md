@@ -28,4 +28,4 @@ And finally we execute
 Report them in the [issue tracker.](https://github.com/Florennum/ConservationMode/issues)
 
 # TODO LIST:
-Add thinkpad support(if possible)*
+Expand the script, make it more beautiful
