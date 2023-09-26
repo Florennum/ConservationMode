@@ -5,7 +5,7 @@ Q:Why is there a legacy branch?
 A:The legacy branch uses the old scheme of doing things. For example when you execute the script you are in lets say a "manager mode" and in there you can use the options until you exit.
 
 
-Q:Wait, why did u decide to make this a legacy branch?
+Q:Wait, why did u decide to make this the main branch?
 
 A1: Because I can.
 
@@ -33,11 +33,11 @@ cd ConservationMode/
 ```
 After that we get ourselves some permissions
 ```sh
-sudo chmod +rwx conservation_mode_legacy.sh
+sudo chmod +rwx conservation_mode.sh
 ```
 And finally we execute
 ```sh
-./conservation_mode_legacy.sh
+./conservation_mode.sh
 ```
 
 # How to use it
