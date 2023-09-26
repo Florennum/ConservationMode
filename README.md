@@ -15,11 +15,11 @@ cd ConservationMode/
 ```
 After that we get ourselves some permissions
 ```sh
-sudo chmod +rwx go_installer.sh
+sudo chmod +rwx conservation_mode.sh
 ```
 And finally we execute
 ```sh
-./go_installer.sh
+.conservation_mode.sh
 ```
 # Encountering issues?
 Report them in the [issue tracker.](https://github.com/Florennum/ConservationMode/issues)
