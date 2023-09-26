@@ -11,7 +11,7 @@ A1: Because I can.
 
 A2: Because i like the new scheme more than the old one.
 
-# ConservationMode for Linucs
+# ConservationMode for Linucs/Linux
 A script for conservation mode on Lenovo laptops
 
 # System requirements(subject to change)
