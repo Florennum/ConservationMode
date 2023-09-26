@@ -23,9 +23,9 @@ A laptop that supports conservation mode
 
 
 # How to install it
-First we need to clone the repository, we will use git for that but you can use whatever you want as long as it works
+First we need to clone the legacy branch, we will use git for that but you can use whatever you want as long as it works
 ```sh
-git clone https://github.com/Florennum/ConservationMode.git
+git clone -b legacy https://github.com/Florennum/ConservationMode.git
 ```
 Then we change the working directory with
 ```sh
