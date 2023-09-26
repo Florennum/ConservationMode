@@ -1,4 +1,4 @@
-# WELCOME TO THE LEGACY BRANCH!(THE MANAGER LIKE SCHEME)
+# WELCOME TO THE MAIN BRANCH!(THE GENERAL COMMANDS LIKE SCHEME)
 FAQ:
 Q:Why is there a legacy branch?
 
@@ -43,7 +43,12 @@ And finally we execute
 # How to use it
 You have 4 options
 
-check, enable, disable, exit
+--status, --enable, --disable
+
+example:
+```sh
+./conservation_mode.sh --enable
+```
 
 I don't think that I need to explain to you how to use these.
 
@@ -52,3 +57,4 @@ Report them in the [issue tracker.](https://github.com/Florennum/ConservationMod
 
 # TODO LIST:
 Expand the script, make it more beautiful
+Make a bashrc importer
