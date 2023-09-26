@@ -3,7 +3,9 @@ A script for conservation mode on Lenovo laptops
 
 # System requirements(subject to change)
 You need to have the ideapad_laptop module loaded
+
 A laptop that supports conservation mode
+
 
 # How to use it
 First we need to clone the repository, we will use git for that but you can use whatever you want as long as it works
