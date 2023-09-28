@@ -8,14 +8,7 @@ NC='\033[0m' # No Color
 check_module="sudo lsmod | grep ideapad_laptop"
 path=$(sudo find /sys -type f -name conservation_mode 2>/dev/null)
 
-if [ -z "$path" ]; then
-    echo -e "error code 0(check the github trouble shooting guide)"
-    echo -e "${RED}Conservation mode file not found. This feature is either not be supported on your Lenovo laptop or the script is not compatible with your device.${NC}"
-    exit 1
-fi
-
 if [ -z "$check_module" ]; then
-    echo -e "error code 1(check the github troubleshooting guide)"
     echo -e "${RED}ideapad_laptop Kernel module not loaded/running. This feature is either not be supported on your Lenovo laptop or the script is not compatible with your device.${NC}"
     exit 1
 fi
