@@ -47,7 +47,7 @@ You have 4 options
 
 example:
 ```sh
-./conservation_mode.sh --enable
+./cm.sh --enable
 ```
 
 I don't think that I need to explain to you how to use these.
