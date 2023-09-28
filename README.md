@@ -33,17 +33,17 @@ cd ConservationMode/
 ```
 After that we get ourselves some permissions
 ```sh
-sudo chmod +rwx conservation_mode.sh
+sudo chmod +rwx cm.sh
 ```
 And finally we execute
 ```sh
-./conservation_mode.sh
+./cm.sh
 ```
 
 # How to use it
 You have 4 options
 
---status, --enable, --disable
+--status, --enable, --disable and --notify
 
 example:
 ```sh
