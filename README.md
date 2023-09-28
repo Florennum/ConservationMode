@@ -25,7 +25,7 @@ A laptop that supports conservation mode
 # How to install it
 First we need to clone the legacy branch, we will use git for that but you can use whatever you want as long as it works
 ```sh
-git clone -b legacy https://github.com/Florennum/ConservationMode.git
+git clone --branch legacy https://github.com/Florennum/ConservationMode.git
 ```
 Then we change the working directory with
 ```sh
@@ -33,17 +33,17 @@ cd ConservationMode/
 ```
 After that we get ourselves some permissions
 ```sh
-sudo chmod +rwx conservation_mode_legacy.sh
+sudo chmod +rwx cml.sh
 ```
 And finally we execute
 ```sh
-./conservation_mode_legacy.sh
+./cml.sh
 ```
 
 # How to use it
 You have 4 options
 
-check, enable, disable, exit
+status, enable, disable, exit
 
 I don't think that I need to explain to you how to use these.
 
