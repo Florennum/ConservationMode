@@ -8,10 +8,18 @@ NC='\033[0m' # No Color
 check_module="sudo lsmod | grep ideapad_laptop"
 path=$(sudo find /sys -type f -name conservation_mode 2>/dev/null)
 
-if [ -z "$check_module" ]; then
-    echo -e "${RED}ideapad_laptop Kernel module not loaded/running. This feature is either not be supported on your Lenovo laptop or the script is not compatible with your device.${NC}"
+if [ -z "$path" ]; then
+    echo -e "${RED}Conservation mode file not found. This feature may not be supported on your Lenovo laptop.${NC}"
     exit 1
 fi
+
+if [ -z "$check_module" ]; then
+    echo -e "${RED}ideapad_laptop Kernel module not loaded/running. This feature is either not supported on your Lenovo laptop or the script is not compatible with your device.${NC}"
+    exit 1
+fi
+
+# Initialize status variable
+status=""
 
 # Function to check the status
 check_status() {
@@ -23,24 +31,59 @@ check_status() {
     fi
 }
 
-# Parse command-line arguments
+notification_send() {
+    local status="$1"
+    if [ "$status" -eq 1 ]; then
+        notify-send "Conservation Mode" "Conservation mode is currently enabled."
+    else
+        notify-send "Conservation Mode" "Conservation mode is currently disabled."
+    fi
+}
+
+# Initialize an array for non-notify arguments and notify flag
+non_notify_args=()
+notify_flag=0
+
+# Parse command-line arguments, excluding --notify
 while [[ $# -gt 0 ]]; do
     case "$1" in
         --enable)
             sudo bash -c "echo 1 > $path"
-            echo -e "${GREEN}Conservation mode is now enabled.${NC}"
+            non_notify_args+=("$1")
+            shift
             ;;
         --disable)
             sudo bash -c "echo 0 > $path"
-            echo -e "${RED}Conservation mode is now disabled.${NC}"
+            non_notify_args+=("$1")
+            shift
             ;;
         --status)
-            check_status
+            non_notify_args+=("$1")
+            shift
+            ;;
+        --notify)
+            notify_flag=1
+            shift
             ;;
         *)
-            echo -e "${RED}Invalid option: $1${NC}"
-            exit 1
+            non_notify_args+=("$1")
+            shift
             ;;
     esac
-    shift
 done
+
+# Check if --notify is specified and send the notification
+if [ $notify_flag -eq 1 ]; then
+    if [ -z "$status" ]; then
+        check_status
+    fi
+    notification_send "$status"
+fi
+
+# Reconstruct the command with non_notify_args
+set -- "${non_notify_args[@]}"
+
+# If --status is specified, check and display status
+if [[ "$*" == *"--status"* ]]; then
+    check_status
+fi
