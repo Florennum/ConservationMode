@@ -9,12 +9,7 @@ path=$(sudo find /sys -type f -name conservation_mode 2>/dev/null)
 enable="echo 1 | sudo tee $path"
 disable="echo 0 | sudo tee $path"
 check="cat $path"
-check_module="sudo dmesg | grep ideapad_laptop"
-
-if [ -z "$path" ]; then
-    echo -e "${RED}Conservation mode file not found. This feature is either not be supported on your Lenovo laptop or the script is not compatible with your device.${NC}"
-    exit 1
-fi
+check_module="sudo lsmod | grep ideapad_laptop"
 
 if [ -z "$check_module" ]; then
     echo -e "${RED}Kernel module not found. This feature is either not be supported on your Lenovo laptop or the script is not compatible with your device.${NC}"
@@ -27,7 +22,7 @@ while true; do
     choice=$(echo "$choice" | tr '[:upper:]' '[:lower:]')
 
     case "$choice" in
-        "check")
+        "status")
             status=$(eval "$check")
             if [ "$status" -eq 1 ]; then
                 echo -e "${GREEN}Conservation mode is currently enabled.${NC}"
