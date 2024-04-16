@@ -1,26 +1,12 @@
-# WELCOME TO THE MAIN BRANCH!(THE GENERAL COMMANDS LIKE SCHEME)
-FAQ:
-Q:Why is there a legacy branch?
+# WELCOME!
 
-A:The legacy branch uses the old scheme of doing things. For example when you execute the script you are in lets say a "manager mode" and in there you can use the options until you exit.
+# ConservationMode for Linux
+A script for managing the so called "Conservation Mode" for some Lenovo laptops!
 
-
-Q:Wait, why did u decide to make this the main branch?
-
-A1: Because I can.
-
-A2: Because i like the new scheme more than the old one.
-
-# ConservationMode for Linucs/Linux
-A script for conservation mode on Lenovo laptops
-
-# System requirements(subject to change)
+# System requirements
 !!!(the script checks the current system requirements once ran)!!!
 
-You need to have the ideapad_laptop module loaded
-
-A laptop that supports conservation mode
-
+You need to have the ideapad_laptop module loaded(and the firmware itself).
 
 # How to install it
 First we need to clone the repository, we will use git for that but you can use whatever you want as long as it works
@@ -41,21 +27,22 @@ And finally we execute
 ```
 
 # How to use it
-You have 4 options
+You have 3 options:
 
---status, --enable, --disable and --notify
+on, off, status
 
 example:
 ```sh
-./cm.sh --enable
+./cm.sh off
 ```
+(turns off conservation)
 
-I don't think that I need to explain to you how to use these.
+I don't that there is a need for further explanation. 
 
 # Encountering issues?
 Report them in the [issue tracker.](https://github.com/Florennum/ConservationMode/issues)
 
 # TODO LIST:
-Expand the script, make it more beautiful
+- Revision
 
-Make a bashrc importer
+- Make a bashrc importer
