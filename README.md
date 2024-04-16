@@ -37,7 +37,7 @@ example:
 ```
 (turns off conservation)
 
-I don't that there is a need for further explanation. 
+I don't think that there is a need for further explanation. 
 
 # Encountering issues?
 Report them in the [issue tracker.](https://github.com/Florennum/ConservationMode/issues)
